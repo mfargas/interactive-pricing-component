@@ -5,8 +5,10 @@ body{
     flex-direction: column;
     font-family: 'Manrope', sans-serif;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
+    background-color: hsl(229, 20%, 74%);
     justify-content: center;
+    text-align: center;
 }
 
 header{
@@ -25,6 +27,21 @@ h1, h4{
 
 .price-component{
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 35%;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.jscript-components, .billing-options, .card-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.slider{
+    background-color: hsl(174, 86%, 45%);
 }
 
 button{
