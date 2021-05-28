@@ -6,7 +6,7 @@ body{
     font-family: 'Manrope', sans-serif;
     width: 100vw;
     height: 90vh;
-    background-color: hsl(229, 20%, 74%);
+    background-color: hsl(230, 100%, 99%);
     justify-content: center;
     text-align: center;
 }
@@ -18,11 +18,13 @@ header{
     margin: auto;
     justify-content: center;
     font-size: 15px;
+    background-color: hsl(223, 50%, 87%);
 }
 
 h1, h4{
     margin: auto;
     width: max-content;
+    color: hsl(227, 35%, 25%);
 }
 
 .price-component{
