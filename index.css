@@ -6,7 +6,9 @@ body{
     font-family: 'Manrope', sans-serif;
     width: 100vw;
     height: 90vh;
-    background-color: hsl(230, 100%, 99%);
+    background-image: url('./images/bg-pattern.svg');
+    background-repeat: no-repeat;
+    background-color: hsl(0, 0%, 100%);
     justify-content: center;
     text-align: center;
 }
@@ -18,13 +20,25 @@ header{
     margin: auto;
     justify-content: center;
     font-size: 15px;
-    background-color: hsl(223, 50%, 87%);
+    line-height: 1em;
+    background-image: url('./images/pattern-circles.svg');
+    background-size: 10em;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    overflow: initial;
+    height: max-content;
 }
 
 h1, h4{
     margin: auto;
     width: max-content;
     color: hsl(227, 35%, 25%);
+}
+
+header h5{
+    color: hsl(225, 20%, 60%);
+    font-size: 15px;
 }
 
 .price-component{
@@ -34,6 +48,8 @@ h1, h4{
     height: 50%;
     width: 35%;
     background-color: hsl(0, 0%, 100%);
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 10px 10px rgb(211, 211, 211);
 }
 
 .jscript-components, .billing-options, .card-bottom{
@@ -42,14 +58,136 @@ h1, h4{
     justify-content: space-evenly;
 }
 
-.slider{
+input[type=range]{
+    -webkit-appearance: none;
+    width: 80%;
+    background: transparent;
+    margin: auto;
+}
+
+input[type=range]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    background-color: hsl(224, 65%, 95%);
+    height: 1em;
+    width: 3em;
+}
+
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    content: '';
+    background: url('./images/icon-slider.svg');
+    background-size: 2em;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+input[type=range]:focus {
+    outline: none;
     background-color: hsl(174, 86%, 45%);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: rgb(112, 29, 29);
+}
+
+.billing-options p{
+    font-size: 0.5rem;
+    vertical-align: middle;
+}
+
+.bill-switch{
+    display: block;
+    background-color: #ccc;
+    position: relative;
+    width: 1rem;
+    height: max-content;
+    border-radius: 5px;
+    border-color: lawngreen;
+}
+
+.bill-switch input{
+    display: none;
+}
+
+.switch {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    box-shadow: 6px 6px 10px 6px grey;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.switch:before {
+    position: absolute;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    border-radius: 10px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .switch:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+input:checked + .bill-switch {
+    background-color: #2196F3;
+}
+
+input:focus + .bill-switch {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.billing-options p{
+    color: hsl(225, 20%, 60%);
+    height: max-content;
+}
+
+.jscript-components{
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.card-bottom{
+    height: max-content;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+ul{
+    list-style: url('./images/icon-check.svg');
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+ul li{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1em;
+    padding: 0.25rem;
+    text-align: left;
+    font-size: 0.75em;
+    line-height: 1em;
+    color: hsl(225, 20%, 60%);
 }
 
 button{
     background-color: hsl(227, 35%, 25%);
     color: hsl(225, 20%, 60%);
-    border-radius: 50px;
-    padding: 15px;
+    border-radius: 2rem;
+    height: 2.5rem;
+    width: 10rem;
+    padding: 1rem;
+    font-size: 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+    align-content: center;
+    margin-left: 0.5rem;
     border-color: transparent;
+    cursor: pointer;
 }
