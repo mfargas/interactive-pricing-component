@@ -23,11 +23,22 @@
 <div class="price-component">
 
   <section class="jscript-components">
-    <h4>Pageviews</h4>
-    <h4>$ /month</h4>
+    <div class="pageviews-comp">Pageviews</div>
+    <div class="price-comp">
+      <span class="price-currency">$</span>
+      <span class="price-amount">16</span>
+      <span class="price-option">/month</span>
+    </div>
   </section>
 
-  <input type="range" class="slider" id="pricingSlider">
+  <input type="range" class="slider" id="pricingSlider" 
+    data-price-input='{
+      "0": "10",
+      "1": "50",
+      "2": "100",
+      "3": "500",
+      "4": "1000"
+    }' >
 
   <section class="billing-options">
     <label class="bill-switch">
