@@ -36,6 +36,10 @@ Users should be able to:
 - Live Site URL: [Interactive Price Bar](https://marjoree-interactive-price-bar.netlify.app/)
 
 ## My process
+Currently, I have styled the range input slider component through CSS. I included various versions of the range input such as ms, moz, and webkit in order to ensure accessibility between browsers.
+
+The most challenging portion of this exercise is the data entry relations 
+between the text and slider.
 
 ### Built with
 
