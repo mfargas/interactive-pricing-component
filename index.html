@@ -23,35 +23,34 @@
 <div class="price-component">
 
   <section class="jscript-components">
-    <div class="pageviews-comp"> 
-      <span class="pageviews">100k</span>
-        Pageviews
+    <div class="slider-views" id="pricingSlider">
+      <div class="pageviews-comp">
+        <span class="pageviews">100k</span>
+            Pageviews
       </div>
+      <input type="range" class="slider" 
+        data-price-input='{
+          "0": "10",
+          "1": "50",
+          "2": "100",
+          "3": "500",
+          "4": "1000"
+        }' 
+        oninput="updatePageviews(this.value)">
+    </div>
     <div class="price-comp" 
       data-price-output='{
-        "0": ["$", "8", ""],
+        "0": ["$", "8", "/m"],
         "1": ["$", "12", "/m"],
         "2": ["$", "16", "/m"],
         "3": ["$", "24", "/m"],
         "4": ["$", "36", "/m"]
-      }'
-    >
+      }'>
       <span class="price-currency">$</span>
       <span class="price-amount">16</span>
       <span class="price-option">/month</span>
     </div>
   </section>
-
-  <input type="range" class="slider" id="pricingSlider" 
-    data-price-input='{
-      "0": "10",
-      "1": "50",
-      "2": "100",
-      "3": "500",
-      "4": "1000"
-    }' 
-    oninput="updatePageviews(this.value)">
-
   <section class="billing-options">
     <h5>Monthly Billing         </h5>
     <label class="bill-switch">
@@ -61,9 +60,7 @@
     </label>
     <h5>Yearly Billing</h5>
   </section>
-
   <hr>
-
   <section class="card-bottom">
     <ul>
       <li>Unlimited websites</li>
