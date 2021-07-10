@@ -1,4 +1,4 @@
-const priceBar = document.querySelectorAll(".price");
+const priceBar = document.querySelectorAll(".slider-views");
 
 if(priceBar.length > 0){
     for(let i = 0 ; i < priceBar.length ; i++){
@@ -7,14 +7,20 @@ if(priceBar.length > 0){
         //input
         const pricingInput = {el: priceBar.querySelector("input")};
 
-        pricingInput.data = JSON.parse(pricingInput.el.getAttribute("data-price-input"));
-        pricingInput.currentValEl = slider.querySelector(".pageviews");
+            pricingInput.data = JSON.parse(pricingInput.el.getAttribute("data-price-input"));
+            pricingInput.currentValEl = slider.querySelector(".pageviews");
+            pricingInput.thumbSize = parseInt(
+                window
+                    .getComputedStyle(pricingInput.currentValEl)
+                    .getPropertyValue("--thumb-size"),
+                        10
+                );
 
-        pricingInputEl.setAttribute("min", 0);
-        pricingInputEl.setAttribute("max", Object.keys(priceInput).length - 1);
+            pricingInputEl.setAttribute("min", 0);
+            pricingInputEl.setAttribute("max", Object.keys(priceInput).length - 1);
         
-        !pricingInputEl.getAttribute("value") &&
-        pricingInputEl.setAttribute("value", 0);
+            !pricingInputEl.getAttribute("value") &&
+            pricingInputEl.setAttribute("value", 0);
 
         //output
         const pricingOutputEl = slider.parentNode.querySelectorAll(".price-comp");
@@ -43,7 +49,7 @@ function updatePageviews(val){
     output.innerText = val;
 }
 
-function handlePricingSlide(input, output) {
+function handlePricingSlider(input, output) {
 
     // output the current slider value
     if (input.currentValEl) input.currentValEl.innerHTML = input.data[input.el.value];

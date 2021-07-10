@@ -66,7 +66,9 @@ h4{
     flex-direction: column;
     position: relative;
     height: 60%;
+    max-height: 400px;
     width: 60%;
+    max-width: 500px;
     background-color: hsl(0, 0%, 100%);
     border-radius: 0.5rem;
     box-shadow: 5px 5px 10px 10px rgb(211, 211, 211);
@@ -91,7 +93,7 @@ section{
     position: relative;
     display: flex;
     flex-direction: row;
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 .price-option {
@@ -240,9 +242,10 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     left: -1px;
     cursor: pointer;
     background-color: #ccc;
-    border-radius: 5px;
-    height: 1rem;
-    width: 2rem;
+    border-radius: 15px;
+    height: 18px;
+    width: 34px;
+    left: -1px;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -254,9 +257,10 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 .switch:before {
     position: absolute;
     content: "";
-    height: 1rem;
-    width: 1rem;
-    left: -0.5px;
+    height: 14px;
+    width: 14px;
+    top: 2px;
+    left: -0.25px;
     border-radius: 10px;
     background-color: white;
     -webkit-transition: .4s;
@@ -299,6 +303,7 @@ input:focus + .bill-switch {
     padding: 0;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    display: flex;
 }
 
 ul{
@@ -352,7 +357,7 @@ button{
     }
 
     header h5{
-        font-size: 0.5rem;
+        font-size: 0.75rem;
     }
 
     .price-component{
@@ -368,10 +373,24 @@ button{
         flex-direction: column;
     }
 
+    .slider-views{
+        height: 5rem;
+    }
+
     .price-comp{
         margin-left: auto;
         margin-right: auto;
         margin-top: auto;
+    }
+
+    .card-bottom{
+        flex-direction: column;
+    }
+
+    .card-bottom ul{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
     }
 }
     
@@ -396,7 +415,7 @@ button{
     }
 
     header h5{
-        font-size: 0.5rem;
+        font-size: 0.75rem;
     }
 
     .price-component{
@@ -412,6 +431,10 @@ button{
         flex-direction: column;
     }
 
+    .slider-views{
+        height: 5rem;
+    }
+
     .price-comp{
         margin-left: auto;
         margin-right: auto;
@@ -425,6 +448,13 @@ button{
 
     .card-bottom{
         height: 33%;
+        flex-direction: column;
+    }
+
+    .card-bottom ul{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
     }
 }
 
