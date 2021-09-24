@@ -8,10 +8,6 @@
   <link rel="stylesheet" href="./index.css" type="text/css">
   
   <title>Interactive Pricing Component</title>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
@@ -23,21 +19,24 @@
 <div class="price-component">
 
   <section class="jscript-components">
+
     <div class="slider-views" id="pricingSlider">
       <div class="pageviews-comp">
         <span class="pageviews">100k</span>
             Pageviews
       </div>
+
       <input type="range" class="slider" 
         data-price-input='{
-          "0": "10",
-          "1": "50",
-          "2": "100",
-          "3": "500",
-          "4": "1000"
+          "0": ["10", "k"],
+          "1": ["50", "k"],
+          "2": ["100", "k"],
+          "3": ["500", "k"],
+          "4": ["1", "m"]
         }' 
         oninput="updatePageviews(this.value)">
     </div>
+    <div class="pricing-slider-value"></div>
     <div class="price-comp" 
       data-price-output='{
         "0": ["$", "8", "/m"],
@@ -51,6 +50,7 @@
       <span class="price-option">/month</span>
     </div>
   </section>
+
   <section class="billing-options">
     <h5>Monthly Billing         </h5>
     <label class="bill-switch">

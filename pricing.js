@@ -5,7 +5,7 @@ if(priceBar.length > 0){
         const slider = priceBar[i];
 
         //input
-        const pricingInput = {el: priceBar.querySelector("input")};
+        let pricingInput = {el: document.querySelector("input")};
 
             pricingInput.data = JSON.parse(pricingInput.el.getAttribute("data-price-input"));
             pricingInput.currentValEl = slider.querySelector(".pageviews");
@@ -16,11 +16,11 @@ if(priceBar.length > 0){
                         10
                 );
 
-            pricingInputEl.setAttribute("min", 0);
-            pricingInputEl.setAttribute("max", Object.keys(priceInput).length - 1);
+            pricingInput.el.setAttribute("min", 0);
+            pricingInput.el.setAttribute("max", Object.keys(pricingInput).length - 1);
         
-            !pricingInputEl.getAttribute("value") &&
-            pricingInputEl.setAttribute("value", 0);
+            !pricingInput.el.getAttribute("value") &&
+            pricingInput.el.setAttribute("value", 0);
 
         //output
         const pricingOutputEl = slider.parentNode.querySelectorAll(".price-comp");
@@ -30,11 +30,12 @@ if(priceBar.length > 0){
             const element = pricingOutputEl[i];
             const outputObj = {};
             
-            pricingOutputObj.currency = element.querySelector(".price-currency");
-            pricingOutputObj.amount = element.querySelector(".price-amount");
-            pricingOutputObj.after = element.querySelector(".price-option");
-            pricingOutputObj.data = JSON.parse(element.getAttribute("data-price-output"));
-            pricingOutput.push(pricingOutputObj);
+            outputObj.currency = element.querySelector(".price-currency");
+            outputObj.amount = element.querySelector(".price-amount");
+            outputObj.after = element.querySelector(".price-option");
+            outputObj.data = JSON.parse(element.getAttribute("data-price-output"));
+            console.log(outputObj);
+            pricingOutput.push(outputObj);
         }
 
         handlePricingSlider(pricingInput, pricingOutput);
