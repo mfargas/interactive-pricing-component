@@ -11,10 +11,10 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
+  <!-- - [Continued development](#continued-development) -->
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+<!-- - [Acknowledgments](#acknowledgments) -->
 
 ## Overview
 
@@ -135,7 +135,7 @@ function updatePageviews(val){
 }
 ```
 
-### Continued development
+<!-- ### Continued development -->
 
 ### Useful resources
 
