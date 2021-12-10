@@ -12,7 +12,7 @@ body{
     font-family: 'Manrope', sans-serif;
     font-size: 15px;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     background-image: url('./images/bg-pattern.svg');
     background-repeat: no-repeat;
     background-color: hsl(0, 0%, 100%);
@@ -24,8 +24,8 @@ header{
     display: flex;
     flex-direction: column;
     width: max-content;
-    height: 15rem;
-    margin: auto;
+    height: 10rem;
+    margin: 3rem auto;
     justify-content: center;
     background-image: url('./images/pattern-circles.svg');
     background-size: 10em;
@@ -36,64 +36,64 @@ header{
 }
 
 header h1{
-    margin-top: 10%;
-    margin-right: auto;
-    margin-left: auto;
+    margin:  auto auto 0 auto;
     width: max-content;
     height: max-content;
     align-items: baseline;
     font-size: 2rem;
     font-weight: 800;
-    line-height: 5rem;
+    line-height: 3rem;
     color: hsl(227, 35%, 25%);
 }
 
 header h5{
     color: hsl(225, 20%, 60%);
     font-size: 1rem;
-    line-height: 2rem;
+    line-height: 1rem;
+    margin-bottom: auto;
+    height: max-content;
 }
 
-h4{
+/* h4{
     margin: auto;
     width: max-content;
     color: hsl(227, 35%, 25%);
-}
+} */
 
 .price-component{
-    margin: auto;
+    margin: 0 auto auto auto;
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 60%;
-    max-height: 400px;
-    width: 60%;
-    max-width: 500px;
+    height: 40%;
+    width: 40%;
     background-color: hsl(0, 0%, 100%);
     border-radius: 0.5rem;
-    box-shadow: 5px 5px 10px 10px rgb(211, 211, 211);
+    box-shadow: 5px 5px 10px 10px rgb(230, 230, 230);
 }
 
-section{
+/* section{
     margin: auto;
-}
+} */
 
 .pageviews-comp{
     color: hsl(225, 20%, 60%);
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
+    margin: auto;
 }
 
 .price-comp {
     color: hsl(227, 35%, 25%);
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
     position: relative;
     display: flex;
+    width: max-content;
     flex-direction: row;
-    margin-top: 5%;
+    margin: auto;
 }
 
 .price-option {
@@ -101,40 +101,35 @@ section{
     font-size: 0.75rem;
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
-    margin-top: 20%;
+    margin: 1rem;
 }
 
-.billing-options, .card-bottom{
+.price-per-pageviews{
     display: flex;
-    height: 33%;
-    flex-direction: row;
-    justify-content: space-evenly;
+    width: 90%;
+    margin: 3rem auto 0 auto;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .slider-views{
-    width: 90%;
+    width: 100%;
     height: 100%;
     top: 20%;
     flex-direction: column;
     display: flex;
 }
 
-.billing-options h5{
-    color: hsl(225, 20%, 60%);
-    font-size: 0.5rem;
-}
-
 input[type='range']{
     -webkit-appearance: none;
-    width: 110%;
+    width: 90%;
     height: 0.75em;
     border-radius: 25px;
     background: linear-gradient(to right, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%);
     transition: background 450ms ease-in;
     color: transparent;
     /* background: hsl(174, 86%, 45%); */
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: 2rem auto;
 }
 
 input[type=range]::-webkit-slider-runnable-track{
@@ -204,33 +199,46 @@ input[type=range]::-ms-thumb{
     cursor: pointer;
 }
 
+input[type="range"]::-ms-fill-lower {
+    background: #43e5f7; 
+}
+
 input[type="range"]::-moz-range-progress {
-    background-color: #43e5f7; 
+    background: #43e5f7; 
 }
 input[type="range"]::-moz-range-track {  
-    background-color: hsl(224, 65%, 95%);
+    background: hsl(224, 65%, 95%);
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
     border: 0.5px solid hsl(0, 0%, 100%);
 }
 
+.billing-options, .card-bottom{
+    display: flex;
+    flex-direction: row;
+}
+
 .billing-options{
-    font-size: 1rem;
     height: 4rem;
-    justify-content: center;
+    width: max-content;
     align-items: center;
-    margin: 0;
+    margin: auto 3rem auto auto;
+}
+
+.billing-options h5{
+    color: hsl(225, 20%, 60%);
+    font-size: 0.75rem;
+    margin: auto 1rem;
 }
 
 .bill-switch{
     display: inline-block;
     position: relative;
-    margin-left: 10px;
-    margin-right: 15px;
-    width: 1.5rem;
+    margin: auto 35px auto auto;;
     height: 1rem;
     border-radius: 5px;
+    transform-origin: left;
 }
 
 .bill-switch input{
@@ -239,15 +247,14 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 .switch {
     position: absolute;
-    left: -1px;
     cursor: pointer;
     background-color: #ccc;
     border-radius: 15px;
     height: 18px;
-    width: 34px;
-    left: -1px;
+    width: 33px;
     -webkit-transition: .4s;
     transition: .4s;
+
 }
 
 .switch input{
@@ -260,35 +267,40 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     height: 14px;
     width: 14px;
     top: 2px;
-    left: -0.25px;
+    left: 1px;
     border-radius: 10px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
 }
 
-input:checked + .switch:before {
+input:checked+ .switch:before {
     -webkit-transform: translateX(1rem);
     -ms-transform: translateX(1rem);
     transform: translateX(1rem);
 }
 
-input:checked + .switch {
+switch {
     background-color: hsl(223, 50%, 87%);
 }
 
-input:focus + .bill-switch {
-    box-shadow: 0 0 1px hsl(223, 50%, 87%);
+input:checked +  {
+    background-color: #43e5f7;
 }
 
-.billing-options p{
-    color: hsl(225, 20%, 60%);
-    height: max-content;
+input:focus + .bill-switch {
+    box-shadow: 0 0 1px #43e5f7;
+}
+
+.discount{
+    color: hsl(15, 100%, 70%);
+    background-color: hsl(14, 92%, 95%);
+    font-size: 8px;
+    border-radius: 10px;
+    margin: auto;
 }
 
 .jscript-components{
-    margin-top: 1rem;
-    padding: 1rem;
     display: flex;
     height: 100%;
     width: 100%;
@@ -296,26 +308,26 @@ input:focus + .bill-switch {
 
 .price-component hr{
     border-top: 0.5px solid hsl(224, 65%, 95%);
+    width: 100%;
+    margin: 1rem auto;
 }
 
 .card-bottom{
     height: 40%;
+    width: 100%;
     padding: 0;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem auto;
     display: flex;
+    justify-content: space-evenly;
 }
 
 ul{
     list-style: url('./images/icon-check.svg');
-    margin-top: auto;
-    margin-bottom: auto;
+    margin:auto;
 }
 
 ul li{
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 1em;
+    margin: auto auto auto 1em;
     padding: 0.25rem;
     text-align: left;
     font-size: 0.75em;
@@ -331,7 +343,7 @@ button{
     width: 10rem;
     padding: 0.5rem;
     font-size: 0.75rem;
-    margin-left: 0.5rem;
+    margin: auto;
     line-height: 1.5rem;
     border-color: transparent;
     cursor: pointer;
@@ -361,11 +373,10 @@ button{
     }
 
     .price-component{
-        width: 100%;
-        margin: auto;
+        width: 90%;
+        height: 60%;
+        margin: 0 auto auto auto;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .jscript-components{
@@ -375,12 +386,6 @@ button{
 
     .slider-views{
         height: 5rem;
-    }
-
-    .price-comp{
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: auto;
     }
 
     .card-bottom{

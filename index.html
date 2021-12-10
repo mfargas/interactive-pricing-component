@@ -21,11 +21,23 @@
   <section class="jscript-components">
 
     <div class="slider-views" id="pricingSlider">
-      <div class="pageviews-comp">
+      <div class="price-per-pageviews"><div class="pageviews-comp">
         <span class="pageviews">100k</span>
             Pageviews
       </div>
-
+      <div class="price-comp" data-price-output='{
+              "0": ["$", "8", "/ month"],
+              "1": ["$", "12", "/ month"],
+              "2": ["$", "16", "/ month"],
+              "3": ["$", "24", "/ month"],
+              "4": ["$", "36", "/ month"]
+            }'>
+        <span class="price-currency">$</span>
+        <span class="price-amount">16</span>.00
+        <span class="price-option">/month</span>
+      </div>
+    </div>
+      
       <input type="range" class="slider" 
         data-price-input='{
           "0": ["10", "k"],
@@ -35,30 +47,21 @@
           "4": ["1", "m"]
         }' 
         oninput="updatePageviews(this.value)">
+        <output class="bubble"></output>
     </div>
     <div class="pricing-slider-value"></div>
-    <div class="price-comp" 
-      data-price-output='{
-        "0": ["$", "8", "/m"],
-        "1": ["$", "12", "/m"],
-        "2": ["$", "16", "/m"],
-        "3": ["$", "24", "/m"],
-        "4": ["$", "36", "/m"]
-      }'>
-      <span class="price-currency">$</span>
-      <span class="price-amount">16</span>
-      <span class="price-option">/month</span>
-    </div>
+
   </section>
 
   <section class="billing-options">
-    <h5>Monthly Billing         </h5>
+    <h5>Monthly Billing</h5>
     <label class="bill-switch">
       <input type="checkbox">
       <span class="switch round">
       </span>
     </label>
     <h5>Yearly Billing</h5>
+    <p class="discount">25% discount</p>
   </section>
   <hr>
   <section class="card-bottom">

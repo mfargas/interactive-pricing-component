@@ -28,40 +28,110 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](images/screenshot-price-component.png)
 
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Interactive Price Bar](https://marjoree-interactive-price-bar.netlify.app/)
+### Live Site URL: [Interactive Price Bar](https://marjoree-interactive-price-bar.netlify.app/)
 
 ## My process
-Currently, I have styled the range input slider component through CSS. I included various versions of the range input such as ms, moz, and webkit in order to ensure accessibility between browsers.
-
-The most challenging portion of this exercise is the data entry relations 
-between the text and slider.
+I styled the range input slider component through CSS with HTML data input and output relations through JavaScript. I included various versions of the range input such as ms, moz, and webkit in order to ensure accessibility between browsers. This was the trickiest part to learn as this causes a lot of repetition 
+between each input variation.
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
+- HTML data input/output attributes
+- Vanilla JavaScript
 
 ### What I learned
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<input type="range" class="slider" 
+        data-price-input='{
+          "0": ["10", "k"],
+          "1": ["50", "k"],
+          "2": ["100", "k"],
+          "3": ["500", "k"],
+          "4": ["1", "m"]
+        }' 
+        oninput="updatePageviews(this.value)">
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    content: '';
+    margin-top: -14px;
+    background: url('./images/icon-slider.svg');
+    background-color: hsl(174, 86%, 45%);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px 3px hsl(174, 77%, 80%);
+    height: 36px;
+    width: 36px;
+    background-size: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: ew-resize;
+}
+
+input[type=range]::-moz-range-thumb{
+    -webkit-appearance: none;
+    content: '';
+    margin-top: -14px;
+    background: url('./images/icon-slider.svg');
+    background-color: hsl(174, 86%, 45%);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px 3px hsl(174, 77%, 80%);
+    height: 36px;
+    width: 36px;
+    background-size: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-thumb{
+    -webkit-appearance: none;
+    content: '';
+    margin-top: -14px;
+    background: url('./images/icon-slider.svg');
+    background-color: hsl(174, 86%, 45%);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px 3px hsl(174, 77%, 80%);
+    height: 36px;
+    width: 36px;
+    background-size: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 ```
+
+```html
+this will be updated by updatePageviews(this.value)
+
+<div class="pageviews-comp">
+  <span class="pageviews">100k</span>Pageviews
+</div>
+
+<input type="range" class="slider" data-price-input='{
+    "0": ["10", "k"],
+    "1": ["50", "k"],
+    "2": ["100", "k"],
+    "3": ["500", "k"],
+    "4": ["1", "m"]
+  }' 
+  oninput="updatePageviews(this.value)">
+```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+updates the div w .pageviews-comp
+
+function updatePageviews(val){
+    let output = document.querySelector(".pageviews");
+    output.innerText = val;
 }
 ```
 
@@ -69,8 +139,8 @@ const proudOfThisFunc = () => {
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) -
-- [Example resource 2](https://www.example.com) - 
+- [CSS Tricks | Range Input](https://css-tricks.com/sliding-nightmare-understanding-range-input/) -
+<!-- - [Example resource 2](https://www.example.com) -  -->
 
 ## Author
 
@@ -78,5 +148,4 @@ const proudOfThisFunc = () => {
 - Frontend Mentor - [@mfargas](https://www.frontendmentor.io/profile/mfargas)
 - Twitter - [@marjoree_js](https://www.twitter.com/marjoree_js)
 
-## Acknowledgments
-
+<!-- ## Acknowledgments -->

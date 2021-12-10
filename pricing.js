@@ -53,12 +53,14 @@ function updatePageviews(val){
 function handlePricingSlider(input, output) {
 
     // output the current slider value
-    if (input.currentValEl) input.currentValEl.innerHTML = input.data[input.el.value];
+    if (input.currentValEl){
+        input.currentValEl.innerHTML = input.data[input.el.value];
+    }
     
     // output the current slider value
-    if (input.currentValEl)
+    if (input.currentValEl){
         input.currentValEl.innerHTML = input.data[input.el.value];
-    
+    }
     // update prices
     for (let i = 0; i < output.length; i++) {
         const outputObj = output[i];
